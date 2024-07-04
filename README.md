@@ -9,7 +9,7 @@ This project is designed to help developers learn and master the fundamentals of
 ## Build
 
 ``` bash
-$ npm run build`
+$ npm run build
 ```
 
 ## Deploy
