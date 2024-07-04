@@ -6,6 +6,12 @@ Welcome to my Web Learning Project! This is a project aimed at learning and prac
 
 This project is designed to help developers learn and master the fundamentals of web development, including HTML, CSS, JavaScript, web servers, Node, NPM, Webpack, TypeScript and databases. It includes simple web pages and features to help developers become familiar and proficient in web development basics.
 
+## Install all the dependencies
+
+```bash
+$ npm install
+```
+
 ## Build
 
 ``` bash
