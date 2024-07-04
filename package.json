@@ -5,7 +5,7 @@
     "build": "webpack --mode production",
     "start": "webpack serve --mode development"
   },
-  "keywords": [],
+  "keywords": ["Node", "Webpack", "JavaScript", "CSS", "HTML", "NPM", "TypeScript"],
   "author": "Lenox <nikeorever@gmail.com>",
   "license": "MIT",
   "description": "Learning web",
