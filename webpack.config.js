@@ -26,6 +26,11 @@ module.exports = defineConfig(async () => {
                     test: /\.css$/,
                     use: ['style-loader', 'css-loader'],
                 },
+                {
+                    test: /\.ts$/,
+                    use: 'ts-loader',
+                    exclude: /node_modules/
+                }
             ],
         },
         devServer: {
