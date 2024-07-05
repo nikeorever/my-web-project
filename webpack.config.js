@@ -1,30 +1,44 @@
 const path = require('path');
-const webpack = require('webpack');
+const { defineConfig } = require('@vue/cli-service')
+const webpackPlugin = require('webpack-mkcert')
 
-module.exports = {
-    entry: './src/index.js',
-    output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist'),
-    },
-    module: {
-        rules: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
+module.exports = defineConfig(async () => {
+    const https = await webpackPlugin.default({
+        source: 'coding',
+        hosts: ['localhost', '127.0.0.1']
+    })
+    return {
+        entry: './src/index.js',
+        output: {
+            filename: 'bundle.js',
+            path: path.resolve(__dirname, 'dist'),
+        },
+        module: {
+            rules: [
+                {
+                    test: /\.js$/,
+                    exclude: /node_modules/,
+                    use: {
+                        loader: 'babel-loader',
+                    },
+                },
+                {
+                    test: /\.css$/,
+                    use: ['style-loader', 'css-loader'],
+                },
+            ],
+        },
+        devServer: {
+            server: {
+                type: 'https',
+                options: {
+                    host: 'localhost',
+                    ...https,
                 },
             },
-            {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader'],
-            },
-        ],
-    },
-    devServer: {
-        static: path.join(__dirname, 'dist'),
-        compress: true,
-        port: 9000,
-    },
-};
+            static: path.join(__dirname, 'dist'),
+            compress: true,
+            port: 9000,
+        },
+    }
+})
