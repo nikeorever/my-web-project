@@ -23,11 +23,7 @@ $ npm run build
 ``` bash
 $ npm start
 ```
-Project is running at:
-
-- Loopback: http://localhost:9000/
-- On Your Network (IPv4): http://192.168.200.44:9000/
-- On Your Network (IPv6): http://[fe80::1]:9000/
+Project will be running at: http://localhost:9000/
 
 ## Contributing
 
